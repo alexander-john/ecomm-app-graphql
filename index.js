@@ -23,18 +23,24 @@ const allCourses = [
 
 const typeDefs = gql `
 type Query {
-    courses: [String!]!
+    courses: [Course!]!
     welcome: String
     numOfCourses: Int
     price: Float
     isTrainer: Boolean
+}
+type Course {
+    name: String!
+    description: String!
+    price: Float!
+    discount: Boolean!
 }
 `
 
 const resolvers = {
     Query: {
         courses: () => {
-            return ['TypeScript', 'GraphQL', 'NextJS', 'Angular']
+            return allCourses
         },
         welcome: () => {
             return null;
