@@ -1,23 +1,29 @@
 const { ApolloServer, gql } = require("apollo-server");
 
-const allCourses = [
+const courses = [
     {
+        id: "book-06",
         name: "TypeScript Basics",
         description: "TypeScript Basics for beginners",
         price: 599.99,
-        discount: false
+        discount: false,
+        genreId: "cat-01"
     },
     {
+        id: "book-07",
         name: "GraphQL Basics",
-        description: "GraphQL Basics for begineers",
+        description: "GraphQL Basics for beginners",
         price: 499.99,
-        discount: true
+        discount: true,
+        genreId: "cat-01"
     },
     {
+        id: "book-08",
         name: "NextJS Basics",
         description: "NextJS Basics for beginners",
         price: 599.99,
-        discount: false
+        discount: false,
+        genreId: "cat-01"
     }
 ]
 
