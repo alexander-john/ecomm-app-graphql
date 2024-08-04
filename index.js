@@ -2,6 +2,7 @@ const { ApolloServer, gql } = require("apollo-server");
 
 const typeDefs = gql `
 type Query {
+    courses: [String!]!
     welcome: String
     numOfCourses: Int
     price: Float
@@ -11,8 +12,11 @@ type Query {
 
 const resolvers = {
     Query: {
+        courses: () => {
+            return ['TypeScript', 'GraphQL', 'NextJS', 'Angular']
+        },
         welcome: () => {
-            return "Welcome to the World of GraphQL";
+            return null;
         },
         numOfCourses: () => {
             return 12;
