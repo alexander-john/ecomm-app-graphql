@@ -24,6 +24,30 @@ const courses = [
         price: 599.99,
         discount: false,
         genreId: "cat-01"
+    },
+    {
+        id: "book-21",
+        name: "The Immortals of Meluha",
+        description: "Shiva Trilogy -1",
+        price: 299.99,
+        discount: false,
+        genreId: "cat-02"
+    },
+    {
+        id: "book-22",
+        name: "The Secret of the Nagas",
+        description: "Shiva Trilogy -2",
+        price: 199.99,
+        discount: true,
+        genreId: "cat-02"
+    },
+    {
+        id: "book-23",
+        name: "The Oath of the Vayuputras",
+        description: "Shiva Trilogy -3",
+        price: 599.99,
+        discount: false,
+        genreId: "cat-02"
     }
 ]
 
