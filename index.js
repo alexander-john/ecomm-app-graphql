@@ -8,12 +8,6 @@ const resolvers = {
             const genreId = parent.id;
             return courses.filter(item => item.genreId === genreId);
         }
-    },
-    Course: {
-        genre: (parent, args, context) => {
-            const genreId = parent.genreId;
-            return genres.find(item => item.id === genreId);
-        }
     }
 }
 
