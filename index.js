@@ -68,14 +68,17 @@ type Query {
     isTrainer: Boolean
 }
 type Course {
+    id: ID!
     name: String!
     description: String!
     price: Float!
     discount: Boolean!
+    genre: Genre
 }
 type Genre {
     id: ID!
     name: String!
+    courses: [Course!]!
 }
 `
 
@@ -107,6 +110,18 @@ const resolvers = {
         },
         isTrainer: () => {
             return true;
+        }
+    },
+    Genre: {
+        courses: (parent, args, context) => {
+            const genreId = parent.id;
+            return courses.filter(item => item.genreId === genreId);
+        }
+    },
+    Course: {
+        genre: (parent, args, context) => {
+            const genreId = parent.genreId;
+            return genres.find(item => item.id === genreId);
         }
     }
 }
