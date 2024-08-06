@@ -53,3 +53,5 @@ const genres = [
     { id: 'cat-01', name: 'Technical' },
     { id: 'cat-02', name: 'History' }
 ]
+
+module.exports = { course, genres }
