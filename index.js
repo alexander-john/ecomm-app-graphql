@@ -1,5 +1,6 @@
 const { ApolloServer} = require("apollo-server");
 const { typeDefs } = require("./schema");
+const { courses, genres } = require(",/database");
 
 const resolvers = {
     Query: {
