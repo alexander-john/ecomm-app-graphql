@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require("apollo-server");
+const { ApolloServer} = require("apollo-server");
 
 const courses = [
     {
@@ -56,31 +56,7 @@ const genres = [
     { id: 'cat-02', name: 'History' }
 ]
 
-const typeDefs = gql `
-type Query {
-    courses: [Course!]!
-    course(id: ID!): Course
-    genres: [Genre!]!
-    genre(id: ID!): Genre
-    numOfCourses: Int
-    welcome: String
-    price: Float
-    isTrainer: Boolean
-}
-type Course {
-    id: ID!
-    name: String!
-    description: String!
-    price: Float!
-    discount: Boolean!
-    genre: Genre
-}
-type Genre {
-    id: ID!
-    name: String!
-    courses: [Course!]!
-}
-`
+
 
 const resolvers = {
     Query: {
