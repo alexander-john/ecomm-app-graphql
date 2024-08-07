@@ -1,5 +1,3 @@
-const { course } = require("../database");
-
 exports.Genre = {
     courses: (parent, args, context) => {
         const genreId = parent.id;
