@@ -1,5 +1,8 @@
 exports.Query = {
-    courses: () => courses,
+    courses: (parent, args, context) => {
+        const courses = context.courses;
+        return courses;
+    },
     course: (parent, args, context) => {
         const courseId = args.id;
         const course = courses.find(item => item.id ===
