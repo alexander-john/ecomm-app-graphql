@@ -1,7 +1,13 @@
 exports.Query = {
     courses: (parent, args, context) => {
-        const courses = context.courses;
-        return courses;
+        let filteredCourses = context.courses;
+        const { filter } = args;
+        if(filter) {
+            if(filter.discount){
+                filteredCourses = filteredCourses.filter(product => product.discount);
+            }
+        }
+        return filteredCourses;
     },
     course: (parent, args, context) => {
         const courseId = args.id;

@@ -2,7 +2,7 @@ const { gql } = require("apollo-server");
 
 exports.typeDefs = gql `
 type Query {
-    courses: [Course!]!
+    courses(filter: CoursesFilter): [Course!]!
     course(id: ID!): Course
     genres: [Genre!]!
     genre(id: ID!): Genre
@@ -10,6 +10,9 @@ type Query {
     welcome: String
     price: Float
     isTrainer: Boolean
+}
+input CoursesFilter {
+    discount: Boolean
 }
 type Course {
     id: ID!
