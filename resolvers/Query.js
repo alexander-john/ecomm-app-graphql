@@ -1,5 +1,3 @@
-const { courses, genres } = require("../database");
-
 exports.Query = {
     courses: () => courses,
     course: (parent, args, context) => {
