@@ -47,12 +47,12 @@ const courses = [
         discount: false,
         genreId: "cat-02"
     }
-]
+];
 
 const genres = [
     { id: 'cat-01', name: 'Technical' },
     { id: 'cat-02', name: 'History' }
-]
+];
 
 const reviews = [
     {
@@ -234,4 +234,4 @@ const reviews = [
     },
 ];
 
-exports.db = { courses, genres, reviews }
+module.exports = { courses, genres, reviews };
