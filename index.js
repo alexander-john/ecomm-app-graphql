@@ -1,5 +1,6 @@
 const { ApolloServer} = require("apollo-server");
 const { typeDefs } = require("./schema");
+const
 const { Query } = require("./resolvers/Query");
 const { Course } = require("./resolvers/Course");
 const { Genre } = require("./resolvers/Genre");
