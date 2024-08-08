@@ -11,6 +11,12 @@ type Query {
     price: Float
     isTrainer: Boolean
 }
+type Mutation {
+    addGenre(input: AddGenreInput!): Genre!
+}
+input AddGenreInput {
+    name: String!
+}
 input CoursesFilter {
     discount: Boolean
     avgRating: Int
