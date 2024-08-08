@@ -13,6 +13,7 @@ type Query {
 }
 input CoursesFilter {
     discount: Boolean
+    avgRating: Int
 }
 type Course {
     id: ID!

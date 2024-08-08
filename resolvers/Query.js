@@ -2,9 +2,26 @@ exports.Query = {
     courses: (parent, args, context) => {
         let filteredCourses = context.courses;
         const { filter } = args;
+        let { reviews } = context;
         if(filter) {
-            if(filter.discount){
-                filteredCourses = filteredCourses.filter(product => product.discount);
+            const { discount, avrRating } = filter;
+            if(discount) filteredCourses = filteredCourses.filter(
+                product => product.discount
+            );
+            if([1, 2, 3, 4, 5].includes(avrRating)){
+                filteredCourses = filteredCourses.filter(
+                    item => {
+                        let sum = 0;
+                        let numOfReviews = 0;
+                        reviews.forEach((review) => {
+                            if(review.courseId === item.id){
+                                sum += review.rating;
+                                numOfReviews++;
+                            }
+                        })
+                        const avgCourseRating = sum / numOfReviews;
+                        return avgCourseRating >= avgRating;
+                    })
             }
         }
         return filteredCourses;
