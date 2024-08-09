@@ -18,6 +18,13 @@ type Mutation {
 input AddGenreInput {
     name: String!
 }
+input AddCourseInput {
+    name: String!
+    description: String!
+    price: Float!
+    discount: Boolean!
+    genreId: ID!
+}
 input CoursesFilter {
     discount: Boolean
     avgRating: Int
