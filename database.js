@@ -234,4 +234,4 @@ const reviews = [
     },
 ];
 
-module.exports = { courses, genres, reviews };
+exports.db = { courses, genres, reviews };
