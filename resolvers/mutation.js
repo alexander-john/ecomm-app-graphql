@@ -27,5 +27,16 @@ exports.Mutation = {
         const newReview = { id: uuid(), date, title, comment, rating, courseId }
         db.reviews.push(newReview)
         return newReview
+    },
+    deleteGenre: (parent, { id }, { db }) => {
+        db.genres = db.genres.filter(genre => genre.id !== id);
+        db.courses = db.courses.map(course => {
+            if(course.genreId === id){
+                return {...course, genreId: null}
+            } else {
+                return course
+            }
+        })
+        return true;
     }
 }
