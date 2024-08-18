@@ -15,6 +15,8 @@ type Mutation {
     addGenre(input: AddGenreInput!): Genre!
     addCourse(input: AddCourseInput!): Course!
     addReview(input: AddReviewInput!): Review!
+    deleteGenre(id: ID!): Boolean!
+    deleteCourse(id: ID!): Boolean!
 }
 input AddReviewInput {
     date: String!
