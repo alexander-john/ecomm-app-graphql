@@ -38,5 +38,10 @@ exports.Mutation = {
             }
         })
         return true;
+    },
+    deleteCourse: (parent, { id }, { db }) => {
+        db.courses = db.courses.filter(course => course.id !== id);
+        db.reviews = db.reviews.filter(review => review.courseId !== id);
+        return true;
     }
 }
