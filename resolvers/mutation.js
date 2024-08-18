@@ -19,5 +19,13 @@ exports.Mutation = {
             discount, genreId }
             courses.push(newCourse)
             return newCourse
+    },
+    addReview: (parent, args, context) => {
+        const { input } = args;
+        const { date, title, comment, rating, courseId } = input;
+        const { reviews } = context;
+        const newReview = { id: uuid(), date, title, comment, rating, courseId }
+        reviews.push(newReview)
+        return newReview
     }
 }

@@ -14,6 +14,14 @@ type Query {
 type Mutation {
     addGenre(input: AddGenreInput!): Genre!
     addCourse(input: AddCourseInput!): Course!
+    addReview(input: AddReviewInput!): Review!
+}
+input AddReviewInput {
+    date: String!
+    title: String!
+    comment: String!
+    rating: Int!
+    courseId: ID!
 }
 input AddGenreInput {
     name: String!
